@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+<body>
+  <h1>Links</h1>
+  <div class="links">
+    <a href="lógica-de-programacao/atribuicao-via-desestruturacao (objetos)/script.js">Oi</a>
+    <a href="lógica-de-programacao/ex-lista-de-tarefas/index.html">Oi</a>
+  </div>
+
+  <section class="conteudo"></section>
+  <script>
+    const links = document.querySelectorAll('a');
+    const conteudo = document.querySelectorAll('.conteudo');
+
+
+    links.forEach((link) => {
+      const conteudo = document.querySelectorAll('.conteudo');
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        fetch(link.href)
+        .then(resp => resp.text())
+        .then(html => conteudo.innerHTML = html)
+      })
+    })
+  </script>
+</body>
+</html>
