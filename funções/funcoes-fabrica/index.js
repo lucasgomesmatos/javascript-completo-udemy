@@ -1,15 +1,42 @@
-// IIFE -> immediately invoked function expression
+// Factory Functions
 
-(function (idade) {
-  const sobrenome = 'Gomes'
-  function criaNome(nome) {
-    return `${nome} ${sobrenome}`;
-  }
+function criaPessoa(nome, sobrenome, altura, peso) {
+  return {
+    nome,
+    sobrenome,
+    altura: altura,
+    peso: peso,
 
-  function falaNome() {
-    console.log(criaNome('Lucas'))
-  }
-  falaNome()
-  console.log(idade)
-})(22);
+    // Getter
+    get nomeCompleto() {
+      return `${this.nome} ${this.sobrenome}`;
+    },
+    // Setter
+    set nomeCompleto(valor) {
+      valor = valor.split(' ');
+      this.nome = valor.shift();
+      this.sobrenome = valor.join();
+    },
+
+    fala: function(assunto) {
+      return `${this.nome} está ${assunto}.`;
+    },
+   
+    // Getter
+    get imc() {
+      const indice = this.peso / (this.altura ** 2);
+      return indice.toFixed(2)
+    }
+  };
+}
+
+const p1 = criaPessoa('Lucas', 'Gomes', 1.85, 75);
+const p2 = criaPessoa('Maria', 'Gomes', 1.85, 75);
+
+p1.nomeCompleto = 'Maria Matos';
+console.log(p1.nome)
+console.log(p1.sobrenome)
+console.log(p1.nomeCompleto)
+console.log(p1.imc)
+
 
