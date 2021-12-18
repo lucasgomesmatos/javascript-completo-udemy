@@ -1,13 +1,13 @@
-function CriaCalculadora() {
+function Calculadora() {
     this.display = document.querySelector('.display'),
 
-    this.inicia = function() {
+    this.inicia = () => {
       this.cliqueBotoes();
       this.pressionaBackSpace();
       this.pressionaEnter();
     },
 
-    this.pressionaBackSpace = function(){
+    this.pressionaBackSpace = () => {
       this.display.addEventListener('keydown', e => {
         if (e.keyCode === 8) {
           e.preventDefault();
@@ -16,7 +16,7 @@ function CriaCalculadora() {
       });
     },
 
-    this.pressionaEnter = function() {
+    this.pressionaEnter = () => {
       this.display.addEventListener('keyup', e => {
         if (e.keyCode === 13) {
           this.realizaConta();
@@ -24,7 +24,7 @@ function CriaCalculadora() {
       });
     },
 
-    this.realizaConta = function(){
+    this.realizaConta = () => {
       let conta = this.display.value;
 
       try {
@@ -42,16 +42,16 @@ function CriaCalculadora() {
       }
     },
 
-    this.clearDisplay = function(){
+    this.clearDisplay = () => {
       this.display.value = '';
     },
 
-    this.apagaUm = function() {
+    this.apagaUm = () => {
       this.display.value = this.display.value.slice(0, -1);
     },
 
 
-    this.cliqueBotoes = function() {
+    this.cliqueBotoes = () => {
       document.addEventListener('click', e => {
         const el = e.target;
 
@@ -75,14 +75,14 @@ function CriaCalculadora() {
       });
     },
 
-    this.btnParaDisplay = function (valor) {
+    this.btnParaDisplay = (valor) => {
       this.display.value += valor;
     }
 
 };
 
 
-const calc =  new CriaCalculadora();
+const calc =  new Calculadora();
 
 calc.inicia();
 
