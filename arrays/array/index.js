@@ -1,4 +1,4 @@
-const nomes = ['Lucas', 'Maria', 'João', 'Eduardo', 'Pedro'];
+const nomes1 = ['Lucas', 'Maria', 'João', 'Eduardo', 'Pedro'];
 
 const novo = nomes.slice(0, -1);
 console.log(novo);
