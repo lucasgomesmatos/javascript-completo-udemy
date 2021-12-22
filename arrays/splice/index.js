@@ -2,6 +2,16 @@ const nomes = ['Lucas', 'Maria', 'João', 'Eduardo', 'Pedro'];
 
 // nomes.splice(índice, delete, element1, element2, )
 
-const nome = nomes.splice(3, 2)
+// pop
+// const removidos = nomes.splice(-1, 1);
 
-console.log(nomes, nome);
+// shift
+// const removidos = nomes.splice(0, 1);
+
+// push
+// nomes.splice(nomes.length, 0, 'Paulo')
+
+// unshift
+// nomes.splice(0, 0, 'Paulo')
+
+console.log(nomes)
