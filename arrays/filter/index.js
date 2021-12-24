@@ -61,6 +61,7 @@ const pessoasCinquenta = pessoas.filter((pessoa)=> {
 
 const pessoasComA = pessoas.filter((pessoa)=> {
   return (pessoa.nome.slice(-1) === 'a') ;
+  // pessoa.nome.toLowerCase().endsWith('a')
 });
 
 console.log(pessoasComNomeGrande);
