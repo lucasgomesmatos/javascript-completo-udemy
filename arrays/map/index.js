@@ -26,7 +26,7 @@ const pessoas = [
 
 const nome= pessoas.map(obj => obj.nome);
 const idade = pessoas.map(obj => ({idade: obj.idade}));
-const comIds = pessoas.map(function(obj, indice) {
+const comIds = pessoas.map((obj, indice) => {
 
   // Novo Objeto, uma cópia
   const newObj = {...obj};
