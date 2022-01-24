@@ -8,13 +8,17 @@ document.addEventListener("click", (e) => {
   }
 });
 
-function carregaPagina(el) {
-  const href = el.getAttribute("href");
+async function carregaPagina(el) {
+  try {
+    const href = el.getAttribute("href");
+    const response = await fetch(href);
+    if (response.status !== 200) throw new Error("Error 404");
 
-  fetch(href)
-    .then(response => response.text())
-    .then(html => carregaResultado(html))
-    .catch(e => console.log(e))
+    const html = await response.text();
+    carregaResultado(html);
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 function carregaResultado(response) {
