@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+  --primary-color: #777;
+  --primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+  box-sizing: border-box;
+  outline: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--primary-color);
+  font-family: 'Open sans', sans-serif;
+  font-size: 1.3em;
+  line-height: 1.5em;
+}
+
+.container {
+  max-width: 640px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.senha-gerada {
+  color: #999;
+  font-size: 2rem;
+}
+
+.gerar-senha {
+  background: #111;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.gerar-senha:hover {
+  background: rgba(17, 17, 17, 0.816);
+}
