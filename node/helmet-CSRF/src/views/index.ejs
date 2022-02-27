@@ -2,7 +2,8 @@
 
   <section class="container">
    <form action="/" method="post">
-     <label for="">nome</label>
+     <input type="hidden" name="_csrf" value="<%= csrfToken %> ">
+     <label for="">Cliente</label>
      <input type="text" name="cliente">
      <button>Enviar</button>
    </form>

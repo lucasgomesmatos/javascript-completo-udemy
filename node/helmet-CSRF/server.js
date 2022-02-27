@@ -52,7 +52,8 @@ app.set("view engine", "ejs");
 app.use(csrf());
 
 // Middleware
-app.use(middlewareGlobal, checkCsrfError, csrfMiddleware);
+app.use(middlewareGlobal, checkCsrfError);
+app.use(csrfMiddleware);
 app.use(routes);
 
 app.on("pronto", () => {
