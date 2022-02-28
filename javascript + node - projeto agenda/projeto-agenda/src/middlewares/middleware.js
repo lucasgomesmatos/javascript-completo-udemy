@@ -1,5 +1,5 @@
 exports.middlewareGlobal = (req, res, next) => {
-  res.locals.umaVariavelLocal = "Este é uma valor da variável local.";
+  res.locals.errors = req.flash('errors');
 
   next();
 };
@@ -9,9 +9,9 @@ exports.checkCsrfError = (err, req, res, next) => {
     return res.render('404');
   }
   next();
-}
+};
 
 exports.csrfMiddleware = (req, res, next) => {
   res.locals.csrfToken = req.csrfToken();
   next();
-}
+};
