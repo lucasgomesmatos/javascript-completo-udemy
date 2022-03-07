@@ -11,6 +11,7 @@
       <p class="text-center lead">Crie ou edite seu contato abaixo:</p>
 
       <%- include('includes/messages') %>
+
       <form action="/contato/register" method="POST">
         <input type="hidden" name="_csrf" value=<%=csrfToken%>>
         <div class="form-group">
@@ -30,7 +31,7 @@
           <input type="tel" class="form-control" name="telefone">
         </div>
   
-        <button type="submit" class="btn btn-success mb-5">Salvar</button>
+        <button type="submit" class="btn btn-success my-3">Salvar</button>
       </form>
       
 

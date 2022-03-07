@@ -1,3 +1,3 @@
 exports.index = (req, res) => {
-  res.send('oi')
+  res.render("contato");
 }
