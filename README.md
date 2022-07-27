@@ -1,8 +1,8 @@
-# Códigos de estudo do curso de Javascript Completo
+# Full Javascript Course Class Codes
 
-### Abordados
+### Apprenticeship
 
-- Lógica de Programação
+- Programming logic
 - Array
-- Funções
+- Functions
 
