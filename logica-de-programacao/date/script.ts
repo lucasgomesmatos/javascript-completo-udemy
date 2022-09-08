@@ -1,10 +1,13 @@
 /**
  * Date
  */
+
 //const data = new Date(0); 01/01/1970 timestamp unix ou época unix
+
 // const threeHours: number = 60 * 60 * 3 * 1000;
 // const oneDay = 60 * 60 * 24 * 1000;
 // const date = new Date(0 + threeHours + oneDay); // função construtora Date
+
 // const randomDate = new Date(1999, 0, 2, 17, 30, 30, 300);
 // const data = new Date("1999-01-02 17:30:59");
 // console.log("Dia", data.getDate())
@@ -18,19 +21,24 @@
 /**
  * Ano, Mês, Dia, Horas, Minutos, Segundos, Milésimo de Segundo
  */
+
 // console.log(randomDateString.toString());
+
 function zeroAEsquerda(num) {
-    return num >= 10 ? num : "0".concat(num);
+  return num >= 10 ? num : `0${num}`
 }
+
 function formataData(data) {
-    var dia = data.getDate();
-    var mes = data.getMonth() + 1;
-    var ano = data.getFullYear();
-    var hora = data.getHours();
-    var min = data.getMinutes();
-    var seg = data.getSeconds();
-    return "".concat(zeroAEsquerda(dia), "/").concat(zeroAEsquerda(mes), "/").concat(ano, "  ").concat(zeroAEsquerda(hora), ":").concat(zeroAEsquerda(min), ":").concat(zeroAEsquerda(seg));
+  const dia = data.getDate();
+  const mes = data.getMonth() + 1;
+  const ano = data.getFullYear();
+  const hora = data.getHours();
+  const min = data.getMinutes();
+  const seg = data.getSeconds();
+
+  return `${zeroAEsquerda(dia)}/${zeroAEsquerda(mes)}/${ano}  ${zeroAEsquerda(hora)}:${zeroAEsquerda(min)}:${zeroAEsquerda(seg)}`
 }
-var data = new Date();
-var dataBrasil = formataData(data);
-console.log(dataBrasil);
+
+const data = new Date();
+const dataBrasil = formataData(data)
+console.log(dataBrasil)
