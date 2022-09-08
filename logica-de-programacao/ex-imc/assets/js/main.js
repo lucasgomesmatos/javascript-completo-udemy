@@ -1,20 +1,20 @@
-const form = document.querySelector(".form");
+const form = document.querySelector('.form');
 
 function callbackImc(e) {
   e.preventDefault();
-  const inputPeso = e.target.querySelector("#peso");
-  const inputAltura = e.target.querySelector("#altura");
+  const inputPeso = e.target.querySelector('#peso');
+  const inputAltura = e.target.querySelector('#altura');
 
   const peso = Number(inputPeso.value);
   const altura = Number(inputAltura.value);
 
   if (!peso) {
-    setResultado("Peso inválido", false);
+    setResultado('Peso inválido', false);
     return;
   }
 
   if (!altura) {
-    setResultado("Altura inválido", false);
+    setResultado('Altura inválido', false);
     return;
   }
 
@@ -27,15 +27,15 @@ function callbackImc(e) {
   console.log(imc, nivelImc);
 }
 
-form.addEventListener("submit", callbackImc);
+form.addEventListener('submit', callbackImc);
 
 function setResultado(msg, isValid) {
-  const resultado = document.querySelector(".resultado");
-  resultado.innerHTML = "";
+  const resultado = document.querySelector('.resultado');
+  resultado.innerHTML = '';
   const p = criarParagrafo();
-  if(isValid) {
+  if (isValid) {
     p.classList.add('paragrafo-resultado');
-  }else {
+  } else {
     p.classList.add('paragrafo-error');
   }
   p.innerHTML = msg;
@@ -43,7 +43,7 @@ function setResultado(msg, isValid) {
 }
 
 function criarParagrafo(classe) {
-  const p = document.createElement("p");
+  const p = document.createElement('p');
   return p;
 }
 
@@ -54,12 +54,12 @@ function getImc(peso, altura) {
 
 function getNivelImc(imc) {
   const nivel = [
-    "Abaixo do peso",
-    "Peso normal",
-    "Sobrepeso",
-    "Obesidade grau 1",
-    "Obesidade grau 2",
-    "Obesidade grau 3",
+    'Abaixo do peso',
+    'Peso normal',
+    'Sobrepeso',
+    'Obesidade grau 1',
+    'Obesidade grau 2',
+    'Obesidade grau 3',
   ];
 
   if (imc >= 39.9) {
